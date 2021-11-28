@@ -2,8 +2,11 @@ import Head from 'next/head';
 import Button from '../components/Button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function Login() {
+  const router = useRouter();
+
   return (
     <div className='flex items-center justify-center h-screen bg-gray-100'>
       <Head>
@@ -43,7 +46,15 @@ export default function Login() {
               placeholder='Digite sua sua senha'
             />
           </div>
-          <Button type='submit'>Entrar</Button>
+          <Button
+            type='submit'
+            onClick={(e) => {
+              e.preventDefault();
+              router.push('/');
+            }}
+          >
+            Entrar
+          </Button>
 
           <p className='w-full mt-4 text-sm text-center text-gray-500'>
             Não tem uma conta?{' '}
