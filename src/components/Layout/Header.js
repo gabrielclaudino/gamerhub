@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import Image from 'next/image';
+import Avatar from './Avatar';
 
 const Header = () => {
   return (
@@ -12,11 +12,7 @@ const Header = () => {
         </a>
       </Link>
 
-      <img
-        className='inline object-cover w-8 h-8 mr-2 rounded-full ring-2 ring-white'
-        src='/blank-profile-picture.svg'
-        alt='Imagem de perfil'
-      />
+      <Avatar />
     </header>
   );
 };
